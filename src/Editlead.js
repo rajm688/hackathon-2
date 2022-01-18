@@ -20,7 +20,7 @@ export function Editlead() {
       .then((data) => data.json())
       .then((ld) => setlead(ld));
   };
-  useEffect(getlead, []);
+  useEffect(getlead, [data,ld]);
   return leads ? <Updatelead leads={leads} /> : "";
 }
 function Updatelead({ leads }) {

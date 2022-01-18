@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+import {Breadcrumb} from "react-bootstrap";
 import { useEffect, useState } from "react";
 import {
   Button,
@@ -22,7 +23,11 @@ export function Dashboard() {
         <hr />
 
         <div className="editbuttons">
-          <h1>Leads</h1>
+        <Breadcrumb>
+  <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
+  <Breadcrumb.Item active href="#">Lead</Breadcrumb.Item>
+  <Breadcrumb.Item href="#" >Contact</Breadcrumb.Item>
+</Breadcrumb>
           <div>
             <ButtonGroup aria-label="Basic example">
               <Button onClick={() => history.push("/createLead")}>
@@ -46,6 +51,7 @@ export function Dashboard() {
             edit = {<Button onClick={()=>history.push(`/editlead/${id}`)}>Edit</Button>}
             deletelead={
               <Button
+              className="bg-danger"
                 onClick={() => {
                   fetch(
                     `https://61c412fdf1af4a0017d99285.mockapi.io/crmleads/${id}`,

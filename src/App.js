@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import { SignupPage } from "./SignupPage";
 import { Login } from "./Login";
@@ -14,7 +14,6 @@ export default function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState([]);
-  const [lead, setLead] = useState();
   // console.log(email,password,user)
   console.log(user);
   return (
